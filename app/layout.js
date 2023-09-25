@@ -24,13 +24,15 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.className} overflow-x-hidden flex flex-col items-center`}
       >
-        <Link href="/" className="flex justify-center w-full p-6">
-          <div className="flex items-center justify-center w-full gap-3 tablet:justify-start max-w-7xl">
-            <Image src={logo} alt="logo" />
-            <p className={`${branch.className} text-2xl`}>Oruchan ASAR</p>
+        <div className="top-0 flex justify-center w-full p-6 bg-white blur-0">
+          <div className="flex flex-col items-center justify-between w-full gap-6 tablet:flex-row max-w-7xl">
+            <Link href="/" className="flex items-center gap-2">
+              <Image src={logo} alt="logo" />
+              <p className={`${branch.className} text-2xl`}>Oruchan ASAR</p>
+            </Link>
+            <NavMenu />
           </div>
-        </Link>
-        <NavMenu />
+        </div>
         {children}
         <Footer />
       </body>

@@ -37,7 +37,7 @@ export default function Home() {
     },
   ];
   return (
-    <main className="flex justify-center w-full px-6 my-32">
+    <main className="flex justify-center w-full px-6 my-24">
       <div className="flex flex-col w-full gap-16 my-8 max-w-7xl">
         <h1 className={`${branch.className} text-[max(48px,min(5vw,76px))]`}>
           Frontend Developer
