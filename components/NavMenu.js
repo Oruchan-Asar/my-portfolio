@@ -23,7 +23,7 @@ export default function NavMenu() {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      className="fixed flex  w-fit desktop:left-[calc(50%-145px)] p-[11px] right-0 top-20 tablet:top-6"
+      className="fixed flex px-6 pt-3 w-fit top-24 tablet:top-6"
     >
       <ul className="flex gap-2 items-center h-fit bg-white p-[3px] rounded-md shadow-[0_2px_10px] shadow-blackA7">
         {tabs?.map((tab, index) => (
