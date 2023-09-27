@@ -5,7 +5,7 @@ export default function Card({ image, title, desc, link }) {
   return (
     <Link
       href={link}
-      className="bg-white shadow-lg desktop:max-w-sm laptop:max-w-lg h-fit"
+      className="w-full bg-white shadow-lg desktop:max-w-sm laptop:max-w-lg h-fit"
     >
       <Image src={image} alt="keycloak" className="w-full" />
       <div className="px-4 py-2">

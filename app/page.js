@@ -65,7 +65,7 @@ export default function Home() {
         </div>
         <Image
           src={tw}
-          alt="Switzerland"
+          alt="SonSilah2"
           className="object-cover w-full transition-all duration-500 ease-out rounded-md h-96 grayscale hover:grayscale-0"
         />
       </div>
