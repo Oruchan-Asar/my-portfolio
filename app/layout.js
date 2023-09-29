@@ -6,6 +6,7 @@ import logo from "@/public/logo.svg";
 import NavMenu from "@/components/NavMenu";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import { Analytics } from "@vercel/analytics/react";
 
 const branch = localFont({
   src: "./Branch.ttf",
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
           </div>
         </div>
         {children}
+        <Analytics />
         <Footer />
       </body>
     </html>
