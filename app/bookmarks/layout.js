@@ -2,7 +2,6 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import UserIcon from "@/public/tabMenuIcons/UserIcon";
 import PodcastIcon from "@/public/tabMenuIcons/PodcastIcon";
 import ToolsIcon from "@/public/tabMenuIcons/ToolsIcon";
 

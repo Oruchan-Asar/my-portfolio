@@ -7,6 +7,7 @@ import NavMenu from "@/components/NavMenu";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const branch = localFont({
   src: "./Branch.ttf",
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
         </div>
         {children}
         <Analytics />
+        <SpeedInsights />
         <Footer />
       </body>
     </html>
