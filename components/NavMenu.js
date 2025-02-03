@@ -35,7 +35,7 @@ export default function NavMenu() {
                 (pathname.startsWith("/bookmarks") && tab.link === "/bookmarks")
                   ? "bg-blue-200"
                   : "hover:bg-blue-100 ease-out transition-all duration-300"
-              } outline-none cursor-pointer font-medium leading-none rounded`}
+              } outline-hidden cursor-pointer font-medium leading-none rounded`}
             >
               <Image src={tab.icon} alt={`${tab.name} icon`} />
               <p className="text-sm font-medium">{tab.name}</p>
