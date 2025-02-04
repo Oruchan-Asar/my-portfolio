@@ -29,13 +29,13 @@ export default function RootLayout({ children }) {
         <div className="top-0 flex justify-center w-full p-6 bg-white blur-0">
           <div className="flex flex-col items-center justify-between w-full gap-6 tablet:flex-row max-w-7xl">
             <Link href="/" className="flex items-center gap-2">
-              <Image src={logo} alt="logo" />
+              <Image src={logo} alt="logo" priority />
               <p className={`${branch.className} text-2xl`}>Oruchan ASAR</p>
             </Link>
             <NavMenu />
           </div>
         </div>
-        {children}
+        <div className="w-full">{children}</div>
         <Analytics />
         <SpeedInsights />
         <Footer />

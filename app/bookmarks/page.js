@@ -1,19 +1,38 @@
 import Card from "@/components/Card";
 
 async function getBookmarks() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bookmarks`, {
-    next: { revalidate: 3600 }, // Revalidate every hour
-  });
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/bookmarks`,
+      {
+        next: { revalidate: 3600 }, // Revalidate every hour
+      }
+    );
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch bookmarks");
+    if (!res.ok) {
+      console.error("Failed to fetch bookmarks:", res.status);
+      return []; // Return empty array as fallback
+    }
+
+    return res.json();
+  } catch (error) {
+    console.error("Error fetching bookmarks:", error);
+    return []; // Return empty array as fallback
   }
-
-  return res.json();
 }
 
 export default async function Bookmarks() {
   const bookmarks = await getBookmarks();
+
+  if (!bookmarks || bookmarks.length === 0) {
+    return (
+      <div className="flex flex-col gap-8">
+        <p className="text-slate-500">
+          Currently unable to load bookmarks. Please try again later.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col gap-8">
