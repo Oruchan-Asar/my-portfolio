@@ -15,7 +15,7 @@ export default function BookmarksLayout({ children }) {
   return (
     <div className="flex justify-center w-full px-6">
       <div className="w-full min-h-screen max-w-7xl">
-        <div className="flex gap-4 my-6 mt-16 border-b-2 w-fit">
+        <div className="flex gap-4 my-6 mt-16 w-fit">
           {tabs?.map((tab, index) => (
             <Link
               key={index}
