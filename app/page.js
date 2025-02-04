@@ -8,6 +8,7 @@ import {
   TwitterLogoIcon,
 } from "@radix-ui/react-icons";
 import tw from "@/public/tw.png";
+import LetterGlitch from "@/components/LetterGlitch";
 
 const branch = localFont({
   src: "./Branch.ttf",
@@ -37,7 +38,7 @@ export default function Home() {
     },
   ];
   return (
-    <main className="flex justify-center w-full px-6 my-24">
+    <main className="flex justify-center w-full px-6 my-16 md:my-24">
       <div className="flex flex-col w-full gap-16 my-8 max-w-7xl">
         <h1 className={`${branch.className} text-[max(48px,min(5vw,76px))]`}>
           Frontend Developer
@@ -63,11 +64,14 @@ export default function Home() {
             </Link>
           ))}
         </div>
-        <Image
-          src={tw}
-          alt="SonSilah2"
-          className="object-cover w-full transition-all duration-500 ease-out rounded-md h-96 grayscale hover:grayscale-0"
-        />
+        <div className="relative overflow-hidden">
+          <Image
+            src={tw}
+            alt="SonSilah2"
+            className="absolute top-0 left-0 object-cover w-full transition-all duration-500 ease-out rounded-md hover:opacity-80 z-1 h-96 grayscale hover:grayscale-0"
+          />
+          <LetterGlitch />
+        </div>
       </div>
     </main>
   );
