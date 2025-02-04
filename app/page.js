@@ -68,7 +68,7 @@ export default function Home() {
           <Image
             src={tw}
             alt="SonSilah2"
-            className="absolute top-0 left-0 object-cover w-full transition-all duration-500 ease-out rounded-md hover:opacity-80 z-1 h-96 grayscale hover:grayscale-0"
+            className="absolute top-0 left-0 object-cover w-full transition-all duration-500 ease-out rounded-md hover:opacity-80 z-10 h-96 grayscale hover:grayscale-0"
           />
           <LetterGlitch />
         </div>
