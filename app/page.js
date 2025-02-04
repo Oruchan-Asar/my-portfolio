@@ -53,10 +53,11 @@ export default function Home() {
             projects.
           </p>
         </div>
-        <div className="flex gap-2 p-1 border rounded-md w-fit shadow-[0_2px_10px] shadow-blackA7 bg-white">
+        <div className="flex gap-2 p-1  rounded-md w-fit shadow-[0_2px_10px] shadow-blackA7 bg-white">
           {socialMedias.map((socialMedia, index) => (
             <Link
               href={socialMedia.link}
+              target="_blank"
               key={index}
               className="p-2 transition-all duration-300 ease-out rounded-md hover:bg-blue-200"
             >

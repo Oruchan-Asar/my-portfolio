@@ -1,4 +1,4 @@
-import { getShowDetails } from "./utils/spotify";
+import { getShowDetails } from "@/utils/spotify";
 
 // Since this is a server component, we can make it async
 export default async function Podcasts() {

@@ -1,5 +1,5 @@
 import Card from "@/components/Card";
-import getMediumPosts from "./utils/medium";
+import getMediumPosts from "@/utils/medium";
 
 export default async function Blogs() {
   const blogs = await getMediumPosts();
@@ -11,7 +11,7 @@ export default async function Blogs() {
           {blogs.map((blog, index) => (
             <div
               key={index}
-              className="break-inside-avoid w-full bg-white shadow-lg desktop:max-w-sm laptop:max-w-lg h-fit"
+              className="break-inside-avoid w-full bg-white shadow-lg desktop:max-w-sm laptop:max-w-lg h-fit hover:scale-105 transition-all duration-300 ease-out"
             >
               <Card
                 image={blog.image}
