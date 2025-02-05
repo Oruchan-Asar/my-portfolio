@@ -40,7 +40,7 @@ export default async function Bookmarks() {
         Here are some tools that I currently use or have enjoyed using in the
         past:
       </p>
-      <div className="gap-6 space-y-6 columns-1 sm:columns-2 lg:columns-3 xl:columns-4">
+      <div className="gap-6 space-y-6 columns-1 sm:columns-2 lg:columns-3 xl:columns-3">
         {bookmarks.map((bookmark) => (
           <div
             key={bookmark._id}

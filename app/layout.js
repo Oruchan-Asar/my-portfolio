@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
         className={`${inter.className} overflow-x-hidden flex flex-col items-center`}
       >
         <div className="top-0 flex justify-center w-full p-6 bg-white blur-0">
-          <div className="flex flex-col items-center justify-between w-full gap-6 tablet:flex-row max-w-7xl">
+          <div className="flex flex-col items-center justify-between w-full max-w-5xl gap-6 tablet:flex-row">
             <Link href="/" className="flex items-center gap-2">
               <Image src={logo} alt="logo" priority />
               <p className={`${branch.className} text-2xl`}>Oruchan ASAR</p>
@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
             <NavMenu />
           </div>
         </div>
-        <div className="w-full">{children}</div>
+        <div className="w-full max-w-5xl">{children}</div>
         <Analytics />
         <SpeedInsights />
         <Footer />
