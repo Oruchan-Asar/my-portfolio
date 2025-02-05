@@ -20,13 +20,13 @@ export default function BookmarksLayout({ children }) {
             <Link
               key={index}
               href={tab.link}
-              className={`flex items-center gap-2 px-1 py-2 transition-all duration-300 border-b-2 cursor-pointer  ${
+              className={`flex items-center gap-2 px-1 py-2 transition-all duration-300 border-b-2 cursor-pointer ${
                 pathname === tab.link
-                  ? "stroke-blue-500 text-blue-500 border-blue-500"
-                  : "stroke-[#9BA2AE] text-[#9BA2AE] hover:stroke-blue-500 border-b-transparent hover:border-b-2 hover:border-blue-500 hover:text-blue-500"
+                  ? "stroke-sky-700 text-sky-700 border-sky-700 dark:text-sky-600 dark:stroke-sky-600 dark:border-sky-600"
+                  : "stroke-neutral-500 text-neutral-500 hover:stroke-sky-800 border-b-transparent hover:border-b-2 hover:border-sky-800 hover:text-sky-800 dark:hover:text-sky-700 dark:hover:stroke-sky-700 dark:hover:border-sky-700"
               }`}
             >
-              {tab.icon}
+              <div className="dark:invert-[.25]">{tab.icon}</div>
               <p className="text-sm font-medium">{tab.name}</p>
             </Link>
           ))}

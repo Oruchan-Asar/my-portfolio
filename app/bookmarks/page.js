@@ -27,7 +27,7 @@ export default async function Bookmarks() {
   if (!bookmarks || bookmarks.length === 0) {
     return (
       <div className="flex flex-col gap-8">
-        <p className="text-slate-500">
+        <p className="text-slate-500 dark:text-neutral-400">
           Currently unable to load bookmarks. Please try again later.
         </p>
       </div>
@@ -36,7 +36,7 @@ export default async function Bookmarks() {
 
   return (
     <div className="flex flex-col gap-8">
-      <p className="text-slate-500">
+      <p className="text-slate-500 dark:text-neutral-400">
         Here are some tools that I currently use or have enjoyed using in the
         past:
       </p>
@@ -44,7 +44,7 @@ export default async function Bookmarks() {
         {bookmarks.map((bookmark) => (
           <div
             key={bookmark._id}
-            className="w-full bg-white shadow-lg break-inside-avoid desktop:max-w-sm laptop:max-w-lg h-fit"
+            className="w-full bg-white shadow-lg dark:bg-neutral-900 dark:shadow-neutral-950 break-inside-avoid desktop:max-w-sm laptop:max-w-lg h-fit"
           >
             <Card
               image={
