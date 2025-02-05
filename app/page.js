@@ -53,7 +53,7 @@ export default function Home() {
             projects.
           </p>
         </div>
-        <div className="flex gap-2 p-1  rounded-md w-fit shadow-[0_2px_10px] shadow-blackA7 bg-white">
+        <div className="flex gap-2 p-1 bg-white rounded-md shadow-md w-fit">
           {socialMedias.map((socialMedia, index) => (
             <Link
               href={socialMedia.link}
@@ -69,7 +69,7 @@ export default function Home() {
           <Image
             src={tw}
             alt="SonSilah2"
-            className="absolute top-0 left-0 object-cover w-full transition-all duration-500 ease-out rounded-md hover:opacity-80 z-10 h-96 grayscale hover:grayscale-0"
+            className="absolute top-0 left-0 z-10 object-cover w-full transition-all duration-500 ease-out rounded-md hover:opacity-80 h-96 grayscale hover:grayscale-0"
           />
           <LetterGlitch />
         </div>

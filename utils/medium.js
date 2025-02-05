@@ -11,6 +11,7 @@ async function getMediumPosts() {
     const data = await response.json();
 
     if (data.status === "ok") {
+      console.log("data", data.items);
       const posts = data.items.map((item) => {
         // Extract the first image from the content if available
         let imageMatch = item.content.match(/<img[^>]+src="([^">]+)"/);
@@ -27,6 +28,8 @@ async function getMediumPosts() {
             item.description.replace(/<[^>]*>/g, "").substring(0, 200) + "...", // Strip HTML and limit description
           link: item.link,
           image: extractedImage || item.thumbnail,
+          published: item.pubDate,
+          categories: item.categories,
         };
       });
 

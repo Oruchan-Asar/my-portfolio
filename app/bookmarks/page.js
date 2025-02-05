@@ -40,11 +40,11 @@ export default async function Bookmarks() {
         Here are some tools that I currently use or have enjoyed using in the
         past:
       </p>
-      <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+      <div className="gap-6 space-y-6 columns-1 sm:columns-2 lg:columns-3 xl:columns-4">
         {bookmarks.map((bookmark) => (
           <div
             key={bookmark._id}
-            className="break-inside-avoid w-full bg-white shadow-lg desktop:max-w-sm laptop:max-w-lg h-fit hover:scale-105 transition-all duration-300 ease-out"
+            className="w-full bg-white shadow-lg break-inside-avoid desktop:max-w-sm laptop:max-w-lg h-fit"
           >
             <Card
               image={

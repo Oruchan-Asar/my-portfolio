@@ -11,13 +11,15 @@ export default async function Blogs() {
           {blogs.map((blog, index) => (
             <div
               key={index}
-              className="w-full max-w-[900px] transition-all duration-300 ease-out bg-white break-inside-avoid h-fit hover:scale-105 border-b border-gray-200"
+              className="w-full max-w-[900px] bg-white break-inside-avoid h-fit border-b border-gray-200"
             >
               <Card
                 image={blog.image}
                 title={blog.title}
                 desc={blog.desc}
                 link={blog.link}
+                published={blog.published}
+                categories={blog.categories}
                 className="gap-6 tablet:flex laptop:max-w-full desktop:max-w-full desktop:max-h-56"
                 imageClassName="max- p-4 m-auto border-b-0"
               />

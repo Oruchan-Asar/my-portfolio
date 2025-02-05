@@ -25,7 +25,7 @@ export default function NavMenu() {
       viewport={{ once: true }}
       className="flex h-fit"
     >
-      <ul className="flex gap-2 items-center h-fit bg-white p-[3px] rounded-md shadow-[0_2px_10px] shadow-blackA7">
+      <ul className="flex gap-2 items-center h-fit bg-white p-[3px] rounded-md shadow-md">
         {tabs?.map((tab, index) => (
           <li key={index}>
             <Link

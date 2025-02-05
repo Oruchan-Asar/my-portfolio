@@ -7,9 +7,22 @@ export default function Card({
   title,
   desc,
   link,
+  published,
+  categories,
   className,
   imageClassName,
 }) {
+  // Format the date if published exists
+  const formatDate = (dateString) => {
+    if (!dateString) return "";
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+  };
+
   return (
     <Link
       href={link}
@@ -27,9 +40,28 @@ export default function Card({
           className={cn("object-cover", imageClassName)}
         />
       </div>
-      <div className="p-4">
-        <h3 className="text-lg font-semibold">{title}</h3>
-        <p className="text-sm font-light">{desc}</p>
+      <div className="flex flex-col justify-between gap-2 p-4">
+        <div className="flex flex-col gap-2">
+          <h3 className="text-lg font-semibold">{title}</h3>
+          <p className="text-sm font-light">{desc}</p>
+        </div>
+        <div className="flex items-center gap-2">
+          {published && (
+            <p className="text-xs font-light">{formatDate(published)}</p>
+          )}
+          {categories && (
+            <div className="flex flex-wrap gap-1">
+              {categories.map((category, index) => (
+                <span
+                  key={index}
+                  className="px-2 py-1 text-xs font-light bg-gray-100 rounded"
+                >
+                  {category}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </Link>
   );
