@@ -32,12 +32,15 @@ export default function Card({
         className
       )}
     >
-      <div className="relative w-full border-b border-gray-200 aspect-video">
+      <div className="relative w-full aspect-video">
         <Image
           src={image}
           alt={title}
           fill
-          className={cn("object-cover", imageClassName)}
+          className={cn(
+            "object-cover border-b border-gray-200",
+            imageClassName
+          )}
         />
       </div>
       <div className="flex flex-col justify-between gap-2 p-4">
