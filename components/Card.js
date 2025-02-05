@@ -1,20 +1,30 @@
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Card({ image, title, desc, link }) {
+export default function Card({
+  image,
+  title,
+  desc,
+  link,
+  className,
+  imageClassName,
+}) {
   return (
     <Link
       href={link}
       target="_blank"
-      className="w-full bg-white shadow-lg desktop:max-w-sm laptop:max-w-lg h-fit"
+      className={cn(
+        "w-full bg-white desktop:max-w-sm laptop:max-w-lg h-fit",
+        className
+      )}
     >
-      <div className="relative w-full aspect-video border-b border-gray-200">
+      <div className="relative w-full border-b border-gray-200 aspect-video">
         <Image
           src={image}
           alt={title}
           fill
-          className="object-cover"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className={cn("object-cover", imageClassName)}
         />
       </div>
       <div className="p-4">
