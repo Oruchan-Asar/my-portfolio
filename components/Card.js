@@ -41,14 +41,14 @@ export default function Card({
           imageClassName
         )}
       />
-      <div className="flex flex-col justify-between gap-2 p-4">
+      <div className="flex flex-col gap-2 justify-between p-4">
         <div className="flex flex-col gap-2">
           <h3 className="text-lg font-semibold dark:text-neutral-200">
             {title}
           </h3>
           <p className="text-sm font-light dark:text-neutral-400">{desc}</p>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex gap-2 items-center">
           {published && (
             <p className="text-xs font-light dark:text-neutral-400">
               {formatDate(published)}

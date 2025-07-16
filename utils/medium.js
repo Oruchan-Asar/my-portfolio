@@ -11,7 +11,6 @@ async function getMediumPosts() {
     const data = await response.json();
 
     if (data.status === "ok") {
-      console.log("data", data.items);
       const posts = data.items.map((item) => {
         // Extract the first image from the content if available
         let imageMatch = item.content.match(/<img[^>]+src="([^">]+)"/);
