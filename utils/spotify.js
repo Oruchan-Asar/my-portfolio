@@ -4,9 +4,16 @@ const getAccessToken = async () => {
 
   // Validate environment variables
   if (!SPOTIFY_CLIENT_ID || !SPOTIFY_CLIENT_SECRET) {
-    throw new Error(
-      "Missing required environment variables: SPOTIFY_CLIENT_ID or SPOTIFY_CLIENT_SECRET"
-    );
+    // Log warning in development, but return null gracefully
+    if (process.env.NODE_ENV === "development") {
+      console.warn(
+        "⚠️ Missing required environment variables: SPOTIFY_CLIENT_ID or SPOTIFY_CLIENT_SECRET"
+      );
+      console.warn(
+        "💡 Set these in your .env.local file or Vercel dashboard to enable podcasts"
+      );
+    }
+    return null; // Return null instead of throwing error
   }
 
   const response = await fetch("https://accounts.spotify.com/api/token", {
@@ -15,9 +22,9 @@ const getAccessToken = async () => {
       "Content-Type": "application/x-www-form-urlencoded",
       Authorization:
         "Basic " +
-        Buffer.from(
-          `${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`
-        ).toString("base64"),
+        Buffer.from(`${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`).toString(
+          "base64"
+        ),
     },
     body: "grant_type=client_credentials",
   });
@@ -30,7 +37,7 @@ const getAccessToken = async () => {
   }
 
   const data = await response.json();
-  
+
   if (!data.access_token) {
     throw new Error("Spotify API did not return an access token");
   }
@@ -41,6 +48,11 @@ const getAccessToken = async () => {
 export const getShowDetails = async (showId) => {
   try {
     const token = await getAccessToken();
+
+    // If no token (missing env vars), return null gracefully
+    if (!token) {
+      return null;
+    }
 
     const response = await fetch(`https://api.spotify.com/v1/shows/${showId}`, {
       headers: {
@@ -57,7 +69,8 @@ export const getShowDetails = async (showId) => {
 
     return response.json();
   } catch (error) {
+    // Log API errors (but not missing env var errors, which are handled above)
     console.error("Spotify API Error:", error.message);
-    throw error; // Re-throw to let caller handle
+    return null; // Return null instead of throwing to allow graceful handling
   }
 };

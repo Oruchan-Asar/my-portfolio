@@ -17,6 +17,10 @@ export default async function Podcasts() {
     showIds.map(async (id) => {
       try {
         const show = await getShowDetails(id);
+        // Handle null response (missing env vars or API error)
+        if (!show) {
+          return null;
+        }
         return {
           id,
           title: show.name,
@@ -32,6 +36,17 @@ export default async function Podcasts() {
 
   // Filter out any null results from failed requests
   const validShows = shows.filter(Boolean);
+
+  // Show message if no podcasts are available
+  if (validShows.length === 0) {
+    return (
+      <div className="flex flex-col gap-8">
+        <p className="text-slate-500 dark:text-neutral-400">
+          Currently unable to load podcasts. Please try again later.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-wrap justify-between gap-6">

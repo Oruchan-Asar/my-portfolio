@@ -1,20 +1,11 @@
 import Card from "@/components/Card";
+import { fetchBookmarks } from "@/utils/bookmarks";
 
 async function getBookmarks() {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/bookmarks`,
-      {
-        next: { revalidate: 3600 }, // Revalidate every hour
-      }
-    );
-
-    if (!res.ok) {
-      console.error("Failed to fetch bookmarks:", res.status);
-      return []; // Return empty array as fallback
-    }
-
-    return res.json();
+    // Directly call the utility function instead of making HTTP request
+    // This is more efficient for server components and avoids URL construction issues
+    return await fetchBookmarks();
   } catch (error) {
     console.error("Error fetching bookmarks:", error);
     return []; // Return empty array as fallback

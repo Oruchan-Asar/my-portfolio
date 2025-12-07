@@ -23,6 +23,16 @@ export default function Card({
     });
   };
 
+  // Check if image is from Medium CDN - Medium blocks Next.js Image Optimization
+  const isMediumImage =
+    image &&
+    (image.includes("cdn-images-1.medium.com") ||
+      image.includes("miro.medium.com") ||
+      image.includes("medium.com"));
+
+  // Fallback image if none provided
+  const imageSrc = image || "/placeholder-image.jpg";
+
   return (
     <Link
       href={link}
@@ -33,9 +43,10 @@ export default function Card({
       )}
     >
       <Image
-        src={image}
+        src={imageSrc}
         alt={title}
         fill
+        unoptimized={isMediumImage} // Disable optimization for Medium images to avoid 403 errors
         className={cn(
           "object-cover !static border-b border-gray-200 dark:border-neutral-700",
           imageClassName
