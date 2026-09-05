@@ -98,7 +98,7 @@ export default function Home() {
               <StarFilledIcon className="w-3.5 h-3.5 text-clay-500" />
             </motion.span>
             <p className="text-sm font-medium tracking-wide uppercase text-clay-600 dark:text-clay-400">
-              Frontend Developer · Turkey
+              Frontend Developer · Germany
             </p>
           </div>
           <motion.h1

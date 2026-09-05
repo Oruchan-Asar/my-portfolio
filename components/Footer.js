@@ -31,7 +31,7 @@ export default function Footer() {
           ))}
         </div>
         <p className="text-sm text-stone-500 dark:text-stone-400">
-          &copy; {new Date().getFullYear()} Oruchan Asar. Built with Next.js.
+          &copy; {new Date().getFullYear()} Oruchan Asar.
         </p>
       </div>
     </div>
