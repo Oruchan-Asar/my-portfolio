@@ -20,7 +20,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Oruchan ASAR",
   description:
-    "Frontend developer building fast, thoughtful web experiences with Next.js and React.",
+    "Software developer building fast, thoughtful web experiences with Next.js and React.",
 };
 
 export default function RootLayout({ children }) {

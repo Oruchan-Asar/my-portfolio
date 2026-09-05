@@ -98,7 +98,7 @@ export default function Home() {
               <StarFilledIcon className="w-3.5 h-3.5 text-clay-500" />
             </motion.span>
             <p className="text-sm font-medium tracking-wide uppercase text-clay-600 dark:text-clay-400">
-              Frontend Developer · Germany
+              Software Developer · Germany
             </p>
           </div>
           <motion.h1
@@ -116,7 +116,7 @@ export default function Home() {
           <div className="flex flex-col gap-4 text-[17px] leading-relaxed text-stone-600 dark:text-stone-400">
             <p>
               I build fast, thoughtful web experiences with Next.js and React,
-              currently as a frontend developer at Doğuş Teknoloji.
+              currently as a software developer at Doğuş Teknoloji.
             </p>
             <p>
               Outside of client work, I like poking at machine learning side
