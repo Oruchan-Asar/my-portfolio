@@ -37,12 +37,16 @@ export default function Card({
   const imageSrc = image || "/placeholder-image.jpg";
 
   return (
-    <Link href={link} target="_blank" className={cn("block w-full h-full", className)}>
+    <Link href={link} target="_blank" className={cn("block w-full h-full group", className)}>
       <motion.div
         whileHover={{ y: -4 }}
         transition={{ duration: 0.2, ease: "easeOut" }}
-        className="flex flex-col h-full overflow-hidden bg-white border rounded-lg shadow-sm border-stone-200 dark:bg-stone-900 dark:border-stone-800"
+        className="relative flex flex-col h-full overflow-hidden bg-white border rounded-lg shadow-sm transition-shadow duration-300 border-stone-200 hover:shadow-lg hover:shadow-stone-900/5 dark:bg-stone-900 dark:border-stone-800 dark:hover:shadow-black/20"
       >
+        <span
+          aria-hidden="true"
+          className="absolute inset-0 z-10 -translate-x-full -skew-x-12 pointer-events-none bg-gradient-to-r from-transparent via-white/25 to-transparent group-hover:translate-x-full transition-transform duration-700 ease-out dark:via-white/10"
+        />
         <div className="relative w-full overflow-hidden aspect-video bg-stone-100 dark:bg-stone-800">
           <Image
             src={imageSrc}
