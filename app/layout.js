@@ -1,7 +1,6 @@
 import "./globals.css";
 import { Inter, Fraunces } from "next/font/google";
-import Image from "next/image";
-import logo from "@/public/logo.svg";
+import Logo from "@/components/Logo";
 import NavMenu from "@/components/NavMenu";
 import Footer from "@/components/Footer";
 import Link from "next/link";
@@ -34,14 +33,7 @@ export default function RootLayout({ children }) {
           <div className="top-0 flex justify-center w-full p-6 bg-stone-50 dark:bg-stone-950">
             <div className="flex justify-between w-full max-w-5xl gap-6">
               <Link href="/" className="flex items-center gap-3">
-                <Image
-                  src={logo}
-                  alt="Oruchan Asar logo"
-                  width={40}
-                  height={40}
-                  priority
-                  className="w-9 h-9"
-                />
+                <Logo />
                 <p className="font-serif text-2xl italic text-stone-800 dark:text-stone-100">
                   Oruchan Asar
                 </p>
