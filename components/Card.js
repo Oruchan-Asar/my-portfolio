@@ -1,6 +1,9 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Card({
   image,
@@ -38,47 +41,49 @@ export default function Card({
       href={link}
       target="_blank"
       className={cn(
-        "w-full bg-white dark:bg-neutral-950 desktop:max-w-sm laptop:max-w-lg h-fit",
+        "w-full bg-white dark:bg-stone-900 desktop:max-w-sm laptop:max-w-lg h-fit",
         className
       )}
     >
-      <Image
-        src={imageSrc}
-        alt={title}
-        fill
-        unoptimized={isMediumImage} // Disable optimization for Medium images to avoid 403 errors
-        className={cn(
-          "object-cover !static border-b border-gray-200 dark:border-neutral-700",
-          imageClassName
-        )}
-      />
-      <div className="flex flex-col gap-2 justify-between p-4">
-        <div className="flex flex-col gap-2">
-          <h3 className="text-lg font-semibold dark:text-neutral-200">
-            {title}
-          </h3>
-          <p className="text-sm font-light dark:text-neutral-400">{desc}</p>
-        </div>
-        <div className="flex gap-2 items-center">
-          {published && (
-            <p className="text-xs font-light dark:text-neutral-400">
-              {formatDate(published)}
-            </p>
+      <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.2, ease: "easeOut" }}>
+        <Image
+          src={imageSrc}
+          alt={title}
+          fill
+          unoptimized={isMediumImage} // Disable optimization for Medium images to avoid 403 errors
+          className={cn(
+            "object-cover !static border-b border-stone-200 dark:border-stone-700",
+            imageClassName
           )}
-          {categories && (
-            <div className="flex flex-wrap gap-1">
-              {categories.map((category, index) => (
-                <span
-                  key={index}
-                  className="px-2 py-1 text-xs font-light bg-gray-100 rounded dark:bg-neutral-700 dark:text-neutral-300"
-                >
-                  {category}
-                </span>
-              ))}
-            </div>
-          )}
+        />
+        <div className="flex flex-col gap-2 justify-between p-4">
+          <div className="flex flex-col gap-2">
+            <h3 className="font-serif text-lg text-stone-800 dark:text-stone-100">
+              {title}
+            </h3>
+            <p className="text-sm font-light text-stone-600 dark:text-stone-400">{desc}</p>
+          </div>
+          <div className="flex gap-2 items-center">
+            {published && (
+              <p className="text-xs font-light text-stone-500 dark:text-stone-400">
+                {formatDate(published)}
+              </p>
+            )}
+            {categories && (
+              <div className="flex flex-wrap gap-1">
+                {categories.map((category, index) => (
+                  <span
+                    key={index}
+                    className="px-2 py-1 text-xs font-light rounded bg-stone-100 text-stone-600 dark:bg-stone-700 dark:text-stone-300"
+                  >
+                    {category}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
-      </div>
+      </motion.div>
     </Link>
   );
 }

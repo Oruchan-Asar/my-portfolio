@@ -1,8 +1,5 @@
 import "./globals.css";
-import localFont from "next/font/local";
-import { Inter } from "next/font/google";
-import Image from "next/image";
-import logo from "@/public/logo.svg";
+import { Inter, Fraunces } from "next/font/google";
 import NavMenu from "@/components/NavMenu";
 import Footer from "@/components/Footer";
 import Link from "next/link";
@@ -11,40 +8,32 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import ThemeProvider from "@/components/ThemeProvider";
 import ThemeToggle from "@/components/ThemeToggle";
 
-const branch = localFont({
-  src: "./Branch.ttf",
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: "--font-fraunces",
 });
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Oruchan ASAR",
-  description: "Frontend Developer",
+  description:
+    "Frontend developer building fast, thoughtful web experiences with Next.js and React.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.className} overflow-x-hidden flex flex-col items-center dark:bg-neutral-950`}
+        className={`${inter.className} ${fraunces.variable} overflow-x-hidden flex flex-col items-center bg-stone-50 dark:bg-stone-950`}
       >
         <ThemeProvider>
-          <div className="top-0 flex justify-center w-full p-6 bg-white dark:bg-neutral-950 blur-0">
+          <div className="top-0 flex justify-center w-full p-6 bg-stone-50 dark:bg-stone-950">
             <div className="flex justify-between w-full max-w-5xl gap-6">
-              <Link
-                href="/"
-                className="flex items-center justify-between gap-2"
-              >
-                <Image
-                  src={logo}
-                  alt="logo"
-                  width={64}
-                  height={64}
-                  className="w-12"
-                  priority
-                />
-                <p className={`${branch.className} text-2xl dark:text-white`}>
-                  Oruchan ASAR
+              <Link href="/" className="flex items-center">
+                <p className="font-serif text-2xl italic text-stone-800 dark:text-stone-100">
+                  Oruchan Asar
                 </p>
               </Link>
               <div className="flex items-center gap-4">

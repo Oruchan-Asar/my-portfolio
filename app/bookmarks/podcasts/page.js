@@ -41,7 +41,7 @@ export default async function Podcasts() {
   if (validShows.length === 0) {
     return (
       <div className="flex flex-col gap-8">
-        <p className="text-slate-500 dark:text-neutral-400">
+        <p className="text-stone-500 dark:text-stone-400">
           Currently unable to load podcasts. Please try again later.
         </p>
       </div>

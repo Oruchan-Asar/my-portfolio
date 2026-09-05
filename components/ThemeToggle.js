@@ -11,7 +11,7 @@ export default function ThemeToggle({ className }) {
     <button
       onClick={toggleTheme}
       className={cn(
-        "p-2 transition-all duration-300 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800",
+        "p-2 transition-all duration-300 rounded-md hover:bg-clay-50 dark:hover:bg-stone-800",
         className
       )}
     >

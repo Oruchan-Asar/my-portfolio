@@ -7,7 +7,7 @@ export default async function Blogs() {
   return (
     <div className="flex justify-center w-full min-h-screen p-6">
       <div className="w-full my-12 max-w-7xl">
-        <div className="flex flex-col items-center gap-6 space-y-6 divide-y divide-gray-200 dark:divide-neutral-800">
+        <div className="flex flex-col items-center gap-6 space-y-6 divide-y divide-stone-200 dark:divide-stone-800">
           {blogs.map((blog, index) => (
             <div
               key={index}

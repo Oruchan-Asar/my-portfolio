@@ -16,7 +16,7 @@ export default function NavMenu() {
 
   const tabs = [
     { icon: userIcon, name: "About", link: "/" },
-    // { icon: projectIcon, name: "Projects" },
+    { icon: projectIcon, name: "Projects", link: "/projects" },
     { icon: blogIcon, name: "Blogs", link: "/blogs" },
     { icon: bookmarkIcon, name: "Bookmarks", link: "/bookmarks" },
   ];
@@ -29,7 +29,7 @@ export default function NavMenu() {
       className="relative flex justify-end h-fit"
     >
       {/* Desktop menu */}
-      <ul className="z-50 items-center hidden gap-2 p-1 bg-white rounded-md shadow-md md:flex h-fit dark:bg-neutral-800">
+      <ul className="z-50 items-center hidden gap-2 p-1 bg-white rounded-md shadow-md md:flex h-fit dark:bg-stone-800">
         {tabs?.map((tab, index) => (
           <li key={index}>
             <Link
@@ -37,8 +37,8 @@ export default function NavMenu() {
               className={`flex gap-2 p-2 ${
                 pathname === tab.link ||
                 (pathname.startsWith("/bookmarks") && tab.link === "/bookmarks")
-                  ? "bg-sky-200 dark:bg-sky-900"
-                  : "hover:bg-blue-100 dark:hover:bg-sky-800 ease-out transition-all duration-300"
+                  ? "bg-clay-100 dark:bg-clay-900"
+                  : "hover:bg-clay-50 dark:hover:bg-stone-700 ease-out transition-all duration-300"
               } outline-hidden cursor-pointer font-medium leading-none rounded`}
             >
               <Image
@@ -59,17 +59,17 @@ export default function NavMenu() {
       >
         <div className="space-y-1">
           <span
-            className={`block w-5 h-px bg-neutral-800 dark:bg-white transition-all duration-300 ${
+            className={`block w-5 h-px bg-stone-800 dark:bg-white transition-all duration-300 ${
               isOpen ? "rotate-45 translate-y-1" : ""
             }`}
           ></span>
           <span
-            className={`block w-5 h-px bg-neutral-800 dark:bg-white transition-all duration-300 ${
+            className={`block w-5 h-px bg-stone-800 dark:bg-white transition-all duration-300 ${
               isOpen ? "opacity-0" : ""
             }`}
           ></span>
           <span
-            className={`block w-5 h-px bg-neutral-800 dark:bg-white transition-all duration-300 ${
+            className={`block w-5 h-px bg-stone-800 dark:bg-white transition-all duration-300 ${
               isOpen ? "-rotate-45 -translate-y-1.5" : ""
             }`}
           ></span>
@@ -78,7 +78,7 @@ export default function NavMenu() {
 
       {/* Mobile menu dropdown */}
       {isOpen && (
-        <ul className="absolute right-0 z-50 w-48 py-2 bg-white rounded-md shadow-lg md:hidden top-12 dark:bg-neutral-800">
+        <ul className="absolute right-0 z-50 w-48 py-2 bg-white rounded-md shadow-lg md:hidden top-12 dark:bg-stone-800">
           {tabs?.map((tab, index) => (
             <li key={index}>
               <Link
@@ -88,8 +88,8 @@ export default function NavMenu() {
                   pathname === tab.link ||
                   (pathname.startsWith("/bookmarks") &&
                     tab.link === "/bookmarks")
-                    ? "bg-sky-200 dark:bg-sky-900"
-                    : "hover:bg-blue-100 dark:hover:bg-sky-800 ease-out transition-all duration-300"
+                    ? "bg-clay-100 dark:bg-clay-900"
+                    : "hover:bg-clay-50 dark:hover:bg-stone-700 ease-out transition-all duration-300"
                 } outline-hidden cursor-pointer font-medium leading-none`}
               >
                 <Image

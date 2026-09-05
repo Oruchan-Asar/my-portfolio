@@ -22,8 +22,8 @@ export default function BookmarksLayout({ children }) {
               href={tab.link}
               className={`flex items-center gap-2 px-1 py-2 transition-all duration-300 border-b-2 cursor-pointer ${
                 pathname === tab.link
-                  ? "stroke-sky-700 text-sky-700 border-sky-700 dark:text-sky-600 dark:stroke-sky-600 dark:border-sky-600"
-                  : "stroke-neutral-500 text-neutral-500 hover:stroke-sky-800 border-b-transparent hover:border-b-2 hover:border-sky-800 hover:text-sky-800 dark:hover:text-sky-700 dark:hover:stroke-sky-700 dark:hover:border-sky-700"
+                  ? "stroke-clay-700 text-clay-700 border-clay-700 dark:text-clay-600 dark:stroke-clay-600 dark:border-clay-600"
+                  : "stroke-stone-500 text-stone-500 hover:stroke-clay-800 border-b-transparent hover:border-b-2 hover:border-clay-800 hover:text-clay-800 dark:hover:text-clay-700 dark:hover:stroke-clay-700 dark:hover:border-clay-700"
               }`}
             >
               <div className="dark:invert-[.25]">{tab.icon}</div>

@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
@@ -13,6 +13,20 @@
   --breakpoint-tablet: 640px;
   --breakpoint-laptop: 1024px;
   --breakpoint-desktop: 1280px;
+
+  --color-clay-50: #fbf5f1;
+  --color-clay-100: #f6e7dc;
+  --color-clay-200: #ebcdb3;
+  --color-clay-300: #dfae86;
+  --color-clay-400: #d08f5d;
+  --color-clay-500: #bc6c3a;
+  --color-clay-600: #a0552c;
+  --color-clay-700: #804326;
+  --color-clay-800: #623424;
+  --color-clay-900: #4b2a20;
+  --color-clay-950: #2a1710;
+
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
 }
 
 /*
@@ -29,6 +43,15 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
+    border-color: var(--color-stone-200, currentColor);
   }
+}
+
+::selection {
+  background-color: var(--color-clay-200);
+  color: var(--color-clay-900);
+}
+
+html {
+  scroll-behavior: smooth;
 }
