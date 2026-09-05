@@ -4,11 +4,11 @@ export default function Loading() {
       <p className="text-stone-500 dark:text-stone-400">
         Loading bookmarks...
       </p>
-      <div className="flex flex-wrap justify-between gap-6">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 laptop:grid-cols-3">
         {[...Array(6)].map((_, i) => (
           <div
             key={i}
-            className="w-full h-64 bg-stone-200 rounded-lg dark:bg-stone-800 animate-pulse desktop:max-w-sm laptop:max-w-lg"
+            className="w-full h-64 bg-stone-200 rounded-lg dark:bg-stone-800 animate-pulse"
           />
         ))}
       </div>

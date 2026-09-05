@@ -37,33 +37,29 @@ export default function Card({
   const imageSrc = image || "/placeholder-image.jpg";
 
   return (
-    <Link
-      href={link}
-      target="_blank"
-      className={cn(
-        "w-full bg-white dark:bg-stone-900 desktop:max-w-sm laptop:max-w-lg h-fit",
-        className
-      )}
-    >
-      <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.2, ease: "easeOut" }}>
-        <Image
-          src={imageSrc}
-          alt={title}
-          fill
-          unoptimized={isMediumImage} // Disable optimization for Medium images to avoid 403 errors
-          className={cn(
-            "object-cover !static border-b border-stone-200 dark:border-stone-700",
-            imageClassName
-          )}
-        />
-        <div className="flex flex-col gap-2 justify-between p-4">
+    <Link href={link} target="_blank" className={cn("block w-full h-full", className)}>
+      <motion.div
+        whileHover={{ y: -4 }}
+        transition={{ duration: 0.2, ease: "easeOut" }}
+        className="flex flex-col h-full overflow-hidden bg-white border rounded-lg shadow-sm border-stone-200 dark:bg-stone-900 dark:border-stone-800"
+      >
+        <div className="relative w-full overflow-hidden aspect-video bg-stone-100 dark:bg-stone-800">
+          <Image
+            src={imageSrc}
+            alt={title}
+            fill
+            unoptimized={isMediumImage} // Disable optimization for Medium images to avoid 403 errors
+            className={cn("object-cover", imageClassName)}
+          />
+        </div>
+        <div className="flex flex-col justify-between flex-1 gap-3 p-5">
           <div className="flex flex-col gap-2">
             <h3 className="font-serif text-lg text-stone-800 dark:text-stone-100">
               {title}
             </h3>
             <p className="text-sm font-light text-stone-600 dark:text-stone-400">{desc}</p>
           </div>
-          <div className="flex gap-2 items-center">
+          <div className="flex flex-wrap gap-2 items-center">
             {published && (
               <p className="text-xs font-light text-stone-500 dark:text-stone-400">
                 {formatDate(published)}

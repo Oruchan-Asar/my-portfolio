@@ -31,21 +31,17 @@ export default async function Bookmarks() {
         Here are some tools that I currently use or have enjoyed using in the
         past:
       </p>
-      <div className="gap-6 space-y-6 columns-1 sm:columns-2 lg:columns-3 xl:columns-3">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 laptop:grid-cols-3">
         {bookmarks.map((bookmark) => (
-          <div
+          <Card
             key={bookmark._id}
-            className="w-full bg-white shadow-lg dark:bg-stone-900 dark:shadow-stone-950 break-inside-avoid desktop:max-w-sm laptop:max-w-lg h-fit"
-          >
-            <Card
-              image={
-                bookmark.cover || bookmark.favicon || "/placeholder-image.jpg"
-              }
-              title={bookmark.title}
-              desc={bookmark.excerpt || bookmark.description}
-              link={bookmark.link}
-            />
-          </div>
+            image={
+              bookmark.cover || bookmark.favicon || "/placeholder-image.jpg"
+            }
+            title={bookmark.title}
+            desc={bookmark.excerpt || bookmark.description}
+            link={bookmark.link}
+          />
         ))}
       </div>
     </div>

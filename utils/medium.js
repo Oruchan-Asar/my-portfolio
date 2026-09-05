@@ -1,3 +1,14 @@
+function decodeHtmlEntities(text) {
+  if (!text) return text;
+  return text
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#0?39;|&apos;/g, "'")
+    .replace(/&nbsp;/g, " ");
+}
+
 async function getMediumPosts() {
   try {
     const MEDIUM_USERNAME = "oruchan.asar";
@@ -22,9 +33,11 @@ async function getMediumPosts() {
         }
 
         return {
-          title: item.title,
+          title: decodeHtmlEntities(item.title),
           desc:
-            item.description.replace(/<[^>]*>/g, "").substring(0, 200) + "...", // Strip HTML and limit description
+            decodeHtmlEntities(
+              item.description.replace(/<[^>]*>/g, "")
+            ).substring(0, 200) + "...", // Strip HTML and limit description
           link: item.link,
           image: extractedImage || item.thumbnail,
           published: item.pubDate,
